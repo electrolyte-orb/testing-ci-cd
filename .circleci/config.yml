@@ -18,6 +18,8 @@ jobs:
       - run: ls -a
       - run: npx --yes marked@latest -i README.md -o index.html
       - run: cat index.html
+      - run: git commit -am 'commit from circle ci'
+      - run: git push
       
 workflows:
   version: 2
