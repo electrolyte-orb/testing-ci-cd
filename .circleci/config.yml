@@ -15,11 +15,20 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:Gi7zz6lP2wDUZdJRjIHmAw6XA/NOT3B7ht+xiDu3J5E"
       - run: ls -a
       - run: npx --yes marked@latest -i README.md -o index.html
       - run: cat index.html
-      - run: git commit -am 'commit from circle ci'
-      - run: git push
+      - run:
+          name: Commit to Github
+          command: |
+            git config user.email "electrolyte.spdf@outlook.com"
+            git config user.name "CircleCI Job"
+            git add .
+            git commit -m "Pushed by Circle CI"
+            git push origin prod
       
 workflows:
   version: 2
