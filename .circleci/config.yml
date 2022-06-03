@@ -15,7 +15,7 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
-      - run: npx marked -i README.md -o index.html
+      - run: npx --yes marked -i README.md -o index.html
       - run: cat index.html
       
 workflows:
