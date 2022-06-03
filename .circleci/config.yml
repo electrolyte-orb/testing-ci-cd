@@ -24,8 +24,8 @@ jobs:
       - run:
           name: Commit to Github
           command: |
-            git config user.email "electrolyte.spdf@outlook.com"
-            git config user.name "CircleCI Job"
+            git config user.email "ci-build@klukas.net"
+            git config user.name "ci-build"
             git add .
             git commit -m "Pushed by Circle CI"
             git checkout -b deploy
