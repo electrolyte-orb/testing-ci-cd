@@ -10,6 +10,9 @@ jobs:
   build:
     docker:
       - image: cimg/node:16
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run: npx marked -i README.md -o index.html
