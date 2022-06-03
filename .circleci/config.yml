@@ -8,9 +8,15 @@ orbs:
 
 jobs:
   build:
-    executor:
-      name: node/default
+    docker:
+      - image: cimg/node:16
     steps:
       - checkout
       - run: npx marked -i README.md -o index.html
       - run: cat index.html
+      
+workflows:
+  version: 2
+  build_and_push:
+    jobs:
+      - build
