@@ -17,7 +17,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "SHA256:E+WQHAb2gtGUHdFmqMOXz6ZrheftjDlH5M0snwH5GVM"
+            - "bb:72:9d:99:ba:e1:3f:22:19:8b:72:36:93:70:c2:48"
       - run: ls -a
       - run: npx --yes marked@latest -i README.md -o index.html
       - run: cat index.html
