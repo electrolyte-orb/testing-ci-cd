@@ -17,7 +17,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "SHA256:Gi7zz6lP2wDUZdJRjIHmAw6XA/NOT3B7ht+xiDu3J5E"
+            - "SHA256:E+WQHAb2gtGUHdFmqMOXz6ZrheftjDlH5M0snwH5GVM"
       - run: ls -a
       - run: npx --yes marked@latest -i README.md -o index.html
       - run: cat index.html
@@ -28,7 +28,7 @@ jobs:
             git config user.name "CircleCI Job"
             git add .
             git commit -m "Pushed by Circle CI"
-            git push --set-upstream origin prod
+            git push origin prod
       
 workflows:
   version: 2
