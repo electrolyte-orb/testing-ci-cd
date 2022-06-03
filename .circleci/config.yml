@@ -28,7 +28,8 @@ jobs:
             git config user.name "CircleCI Job"
             git add .
             git commit -m "Pushed by Circle CI"
-            git push origin prod
+            git checkout -b deploy
+            git push origin deploy
       
 workflows:
   version: 2
