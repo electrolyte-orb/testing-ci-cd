@@ -29,7 +29,7 @@ jobs:
             git add .
             git commit -m "Pushed by Circle CI [skip ci]"
             git checkout -b deploy
-            git push origin deploy
+            git push -u origin deploy
       
 workflows:
   version: 2
