@@ -17,7 +17,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "bb:72:9d:99:ba:e1:3f:22:19:8b:72:36:93:70:c2:48"
+            - "3f:46:1f:16:3a:1d:f9:4e:3e:4f:5c:16:56:ca:93:2d"
       - run: ls -a
       - run: npx --yes marked@latest -i README.md -o index.html
       - run: cat index.html
