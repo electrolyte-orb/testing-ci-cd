@@ -9,7 +9,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/node:14.19
+      - image: cimg/node:16.15
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD
