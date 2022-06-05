@@ -26,9 +26,12 @@ jobs:
           command: |
             git config user.email "ci-build@klukas.net"
             git config user.name "ci-build"
-            git add index.html
+            git add .
             git commit -m "Pushed by Circle CI [skip ci]"
             git checkout -b deploy
+            rm -rf ./.circleci
+            git add .
+            git commit -m "Pushed by Circle CI [skip ci] AB"
             git push origin deploy
       
 workflows:
