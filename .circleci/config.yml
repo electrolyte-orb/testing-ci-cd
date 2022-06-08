@@ -27,8 +27,6 @@ jobs:
           command: |
             git config user.email "ci-build@klukas.net"
             git config user.name "ci-build"
-            git add .
-            git commit -m "Pushed by Circle CI [skip ci]"
             git checkout -b deploy
             git add .
             git commit -m "Pushed by Circle CI [skip ci] R"
