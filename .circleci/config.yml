@@ -20,13 +20,13 @@ jobs:
             - "3f:46:1f:16:3a:1d:f9:4e:3e:4f:5c:16:56:ca:93:2d"
       - run: yarn
       - run: yarn build
-      - run: rm -rf $(ls | grep -v -e "dist")
       - run:
           name: Commit to Github
           command: |
             git config user.email "electrolyte.spdf@outlook.com"
             git config user.name "Electrolyte Orb"
             git checkout -b deploy
+            rm -rf $(ls | grep -v -e "dist")
             mv dist/* .
             git add index.html
             git add assets/*
