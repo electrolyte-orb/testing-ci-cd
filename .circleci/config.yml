@@ -28,7 +28,9 @@ jobs:
             git config user.email "electrolyte.spdf@outlook.com"
             git config user.name "Electrolyte Orb"
             git checkout -b deploy
-            git add .
+            mv dist/* .
+            git add index.html
+            git add assets/*
             git commit -m "Pushed by Circle CI [skip ci] R"
             git push -f origin deploy
       
