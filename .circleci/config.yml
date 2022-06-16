@@ -28,8 +28,7 @@ jobs:
             git checkout -b deploy
             rm -rf $(ls | grep -v -e "dist")
             mv dist/* .
-            git add index.html
-            git add assets/*
+            git add .
             git commit -m "Pushed by Circle CI [skip ci] R" 
             git push -f origin deploy
       - run: ls  
