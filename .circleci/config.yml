@@ -30,9 +30,9 @@ jobs:
             mv dist/* .
             git add index.html
             git add assets/*
-            ls
             git commit -m "Pushed by Circle CI [skip ci] R" 
             git push -f origin deploy
+      - run: ls  
       
 workflows:
   version: 2
