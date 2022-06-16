@@ -1,0 +1,43 @@
+# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
+version: 2.1
+
+# Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
+# See: https://circleci.com/docs/2.0/orb-intro/
+orbs:
+  node: circleci/node@4.7
+
+jobs:
+  build:
+    docker:
+      - image: cimg/node:16.15
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "3f:46:1f:16:3a:1d:f9:4e:3e:4f:5c:16:56:ca:93:2d"
+      - run: ls -a
+      - run: npx --yes marked@latest -i README.md -o index.html
+      - run: echo "<script src=\"index.js\"></script>" >> index.html
+      - run: cat index.html
+      - run:
+          name: Commit to Github
+          command: |
+            git config user.email "ci-build@klukas.net"
+            git config user.name "ci-build"
+            git checkout -b deploy
+            git add .
+            git commit -m "Pushed by Circle CI [skip ci] R"
+            git push -f origin deploy
+      
+workflows:
+  version: 2
+  build_and_push:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: prod
+            
