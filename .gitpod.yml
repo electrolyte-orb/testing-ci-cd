@@ -1,0 +1,6 @@
+
+vscode:
+  extensions:
+    - esbenp.prettier-vscode
+    - bierner.lit-html
+    - runem.lit-plugin
