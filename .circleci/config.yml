@@ -19,9 +19,8 @@ jobs:
           fingerprints:
             - "3f:46:1f:16:3a:1d:f9:4e:3e:4f:5c:16:56:ca:93:2d"
       - run: ls -a
-      - run: npx --yes marked@latest -i README.md -o index.html
-      - run: echo "<script src=\"index.js\"></script>" >> index.html
-      - run: cat index.html
+      - run: yarn
+      - run: yarn build
       - run:
           name: Commit to Github
           command: |
