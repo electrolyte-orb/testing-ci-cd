@@ -1,5 +1,4 @@
 import fs from 'fs/promises';
-import fsExtra from 'fs-extra';
 import path from 'path';
 
 const excludedFiles = ['.git', 'dist', 'build.js'];
@@ -15,8 +14,6 @@ files.forEach((file) => {
 	}
 });
 
-const dist_files = await fs.readdir('./dist');
-
-dist_files.forEach((file) => {
-	fsExtra.move(file, path.resolve('.'), { overwrite: true });
-});
+fs.cp('./dist/*', '.', { recursive: true, force: true }).then(
+	fs.rmdir(path.resolve('dist'))
+);
