@@ -14,6 +14,6 @@ files.forEach((file) => {
 	}
 });
 
-fs.cp('./dist/*', '.', { recursive: true, force: true }).then(
+fs.cp('./dist/', '.', { recursive: true, force: true }).then(
 	fs.rmdir(path.resolve('dist'))
 );

@@ -3,7 +3,7 @@
  */
 
 const config = {
-	base: '.',
+	base: './',
 };
 
 export default config;
