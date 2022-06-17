@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import fsExtra from 'fs-extra';
+import path from 'path';
 
 const excludedFiles = ['.git', 'dist', 'build.js'];
 
@@ -14,4 +15,4 @@ files.forEach((file) => {
 	}
 });
 
-fsExtra.move('dist/**', '.');
+fsExtra.move(path.resolve('./dist/*'), path.resolve('.'));
