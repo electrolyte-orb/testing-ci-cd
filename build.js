@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import fsExtra from 'https://cdn.skypack.dev/fs-extra';
+import fsExtra from 'fs-extra';
 
 const excludedFiles = ['.git', 'dist', 'build.js'];
 
