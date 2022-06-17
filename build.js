@@ -15,4 +15,8 @@ files.forEach((file) => {
 	}
 });
 
-fsExtra.move(path.resolve('./dist/'), path.resolve('.'));
+const dist_files = await fs.readdir('./dist');
+
+dist_files.forEach((file) => {
+	fsExtra.move(file, path.resolve('.'), { overwrite: true });
+});
