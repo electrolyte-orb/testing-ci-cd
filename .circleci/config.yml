@@ -21,14 +21,19 @@ jobs:
       - run: yarn
       - run: yarn build
       - run:
-          name: Commit to Github
+          name: Checkout `Deploy`
           command: |
             git config user.email "electrolyte.spdf@outlook.com"
             git config user.name "Electrolyte Orb"
             git checkout -b deploy
-            rm -rf $(ls | grep -v -e "dist")
-            rm ./.*
-            mv dist/* .
+      - run:
+          name: Cleaning
+          command: |
+            node build.js
+            rm build.js
+      - run:
+          name: Commit to GitHub
+          command: |
             git add .
             git commit -m "Pushed by Circle CI [skip ci] R" 
             git push -f origin deploy
