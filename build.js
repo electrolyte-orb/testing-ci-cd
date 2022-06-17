@@ -14,9 +14,9 @@ files.forEach((file) => {
 	}
 });
 
-fs.cp('./dist/', '.', { recursive: true, force: true }).then(
-	fs.rm('./dist', {
+fs.cp('./dist/', '.', { recursive: true, force: true }).then(() => {
+	await fs.rm('./dist', {
 		force: true,
 		recursive: true,
-	})
-);
+	});
+});
