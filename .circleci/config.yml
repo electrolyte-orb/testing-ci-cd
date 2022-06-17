@@ -29,7 +29,6 @@ jobs:
       - run:
           name: Cleaning
           command: |
-            ls -a
             node build.js
             rm build.js
       - run:

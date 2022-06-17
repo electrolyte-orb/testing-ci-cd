@@ -15,4 +15,4 @@ files.forEach((file) => {
 	}
 });
 
-fsExtra.move(path.resolve('./dist/*'), path.resolve('.'));
+fsExtra.move(path.resolve('./dist/'), path.resolve('.'));
