@@ -15,7 +15,7 @@ files.forEach((file) => {
 });
 
 fs.cp('./dist/', '.', { recursive: true, force: true }).then(
-	fs.rm(path.resolve('dist'), {
+	fs.rm('./dist', {
 		force: true,
 		recursive: true,
 	})
