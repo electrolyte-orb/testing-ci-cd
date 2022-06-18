@@ -1,4 +1,3 @@
-import { copyFile } from 'fs';
 import fs from 'fs/promises';
 
 const EXCLUDED_FILES = ['.git', 'dist', 'build.js'];
@@ -13,13 +12,8 @@ async function deleteFiles() {
 }
 
 async function moveFiles() {
-	const distFiles = await fs.readdir('dist');
-
-	distFiles.forEach((file) => {
-		fs.cp(`./dist/`, './', { force: true, recursive: true }).then(() => {
-			fs.rm(`./dist/${file}`, { recursive: true, force: true });
-		});
-	});
+	fs.cp('./dist/', './', { force: true, recursive: true });
+	fs.rm('./dist', { force: true, recursive: true });
 }
 
 deleteFiles().then(moveFiles);
