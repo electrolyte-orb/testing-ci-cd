@@ -12,8 +12,9 @@ async function deleteFiles() {
 }
 
 async function moveFiles() {
-	fs.cp('./dist/', './', { force: true, recursive: true });
-	// fs.rm('./dist', { force: true, recursive: true });
+	fs.cp('./dist/', './', { force: true, recursive: true }).then(() => {
+		fs.rm('./dist', { force: true, recursive: true });
+	});
 }
 
 deleteFiles().then(moveFiles);
