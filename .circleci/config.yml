@@ -18,25 +18,20 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "3f:46:1f:16:3a:1d:f9:4e:3e:4f:5c:16:56:ca:93:2d"
-      - run: yarn
-      - run: yarn build
-      - run:
-          name: Checkout `Deploy`
-          command: |
-            git config user.email "electrolyte.spdf@outlook.com"
-            git config user.name "Electrolyte Orb"
-            git checkout -b deploy
-      - run:
-          name: Cleaning
-          command: |
-            node build.js
-            rm build.js
-      - run:
-          name: Commit to GitHub
-          command: |
-            git add .
-            git commit -m "Pushed by Circle CI [skip ci] R" 
-            git push -f origin deploy
+      - run: echo "hello world"
+      # ADD BUILD STEP 
+      # - run:
+      #     name: Checkout `Deploy`
+      #     command: |
+      #       git config user.email "electrolyte.spdf@outlook.com"
+      #       git config user.name "Electrolyte Orb"
+      #       git checkout -b deploy
+      # - run:
+      #     name: Commit to GitHub
+      #     command: |
+      #       git add .
+      #       git commit -m "Pushed by Circle CI [skip ci] R" 
+      #       git push -f origin deploy
       
 workflows:
   version: 2
