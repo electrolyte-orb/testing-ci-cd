@@ -38,7 +38,8 @@ jobs:
       - run:
           name: Commit to GitHub
           command: |
-            git add .
+            git add index.html
+            git add assets
             git commit -m "Pushed by Circle CI [skip ci] R" 
             git push -f origin deploy
       
