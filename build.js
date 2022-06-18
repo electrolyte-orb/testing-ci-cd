@@ -17,7 +17,4 @@ async function moveFiles() {
 	});
 }
 
-function createCNAMEFile() {
-	fs.writeFile('./CNAME', 'questone.duckdns.org');
-}
 deleteFiles().then(moveFiles);
