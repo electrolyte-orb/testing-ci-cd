@@ -16,7 +16,7 @@ async function moveFiles() {
 	const distFiles = await fs.readdir('dist');
 
 	distFiles.forEach((file) => {
-		fs.cp(`./dist/${file}`, './', { force: true, recursive: true }).then(() => {
+		fs.cp(`./dist/`, './', { force: true, recursive: true }).then(() => {
 			fs.rm(`./dist/${file}`, { recursive: true, force: true });
 		});
 	});
