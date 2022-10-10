@@ -26,7 +26,6 @@ jobs:
       - run:
           name: Build
           command: |
-            yarn --frozen-lockfile
             yarn build
       - run:
           name: Checkout `Deploy`
