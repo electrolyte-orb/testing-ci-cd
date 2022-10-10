@@ -1,4 +1,4 @@
-import fs from 'fs/promises';
+const fs = require('fs/promises');
 
 const EXCLUDED_FILES = ['.git', 'dist', 'build.js'];
 async function deleteFiles() {
