@@ -5,7 +5,7 @@ function App() {
     <>
       <Navbar />
       <section className="p-5">
-        <h1 className="text-9xl font-black">Hello world</h1>
+        <h1 className="text-6xl lg:text-9xl font-black">Hello world</h1>
       </section>
     </>
   );
