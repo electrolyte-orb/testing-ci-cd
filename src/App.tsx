@@ -22,13 +22,13 @@ function App() {
           {isVisible && (
             <motion.div
               initial={{
-                scale: 0,
+                scale: "0%",
                 translateX: "-50%",
                 translateY: "-50%",
-                scaleZ: "0%",
               }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0 }}
+              transition={{ type: "tween" }}
+              animate={{ scale: "100%" }}
+              exit={{ scale: "0%" }}
               className="fixed top-1/2 left-1/2 h-96 w-[calc(100vw-60px)] bg-white shadow-2xl rounded-3xl border-gray-300 border p-4"
             >
               <button
