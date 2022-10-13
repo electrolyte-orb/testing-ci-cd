@@ -1,17 +1,14 @@
-import { Navbar } from '@components';
-import { useState } from 'react';
+import { Navbar } from "@components";
 
 function App() {
-	const [name, setName] = useState("")
-	return (
-		<>
-			<Navbar />
-			<div className="p-5 text-xl">
-				<input className='border border-gray-400 px-4 py-1 rounded-lg' type="text" value={name} onChange={(e) => setName(e.target.value)}/>
-				<div>Hellod My {name}</div>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <Navbar />
+      <section className="p-5">
+        <h1 className="text-9xl font-black">Hello world</h1>
+      </section>
+    </>
+  );
 }
 
 export default App;

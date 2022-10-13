@@ -1,4 +1,9 @@
-@import "https://cdn.jsdelivr.net/gh/verbose9/fonts/Roobert/style.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply min-h-screen bg-gray-100;
+  }
+}

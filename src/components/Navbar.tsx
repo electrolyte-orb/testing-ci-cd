@@ -1,10 +1,7 @@
-import MenuAlt4Icon from '@heroicons/react/outline/MenuAlt4Icon';
-
 export default function Navbar() {
-	return (
-		<div className="p-5 bg-white sticky top-0 flex items-center justify-between">
-			<span>Navbar</span>
-			<MenuAlt4Icon className="h-5 w-5" />
-		</div>
-	);
+  return (
+    <div className="p-5 bg-white sticky top-0 shadow-2xl">
+      <span className="text-blue-600 font-bold">Testing CI/CD</span>
+    </div>
+  );
 }
