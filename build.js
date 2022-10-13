@@ -1,6 +1,6 @@
 const fs = require('fs/promises');
 
-const EXCLUDED_FILES = ['.git', 'dist', 'build.js'];
+const EXCLUDED_FILES = ['.git', 'dist', 'build.js', 'CNAME'];
 async function deleteFiles() {
 	const all_files = await fs.readdir('.');
 
