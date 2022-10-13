@@ -9,15 +9,12 @@ function App() {
       <Navbar />
       <section className="p-5">
         <h1 className="text-6xl lg:text-9xl font-black">Hello world</h1>
-        <motion.button
-          whileTap={{
-            scale: 0.8,
-          }}
+        <button
           onClick={() => setVisible((visiblity) => !visiblity)}
           className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
         >
           Click here
-        </motion.button>
+        </button>
         <AnimatePresence>
           {isVisible && (
             <motion.div
