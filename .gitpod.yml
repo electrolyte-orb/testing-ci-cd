@@ -5,3 +5,4 @@ vscode:
     - bradlc.vscode-tailwindcss
     - esbenp.prettier-vscode
     - ms-vscode.vscode-typescript-next
+    - arcanis.vscode-zipfs
