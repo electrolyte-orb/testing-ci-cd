@@ -25,6 +25,7 @@ function App() {
                 scale: 0,
                 translateX: "-50%",
                 translateY: "-50%",
+                scaleZ: "0%",
               }}
               animate={{ scale: 1 }}
               exit={{ scale: 0 }}
