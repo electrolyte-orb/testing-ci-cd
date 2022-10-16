@@ -1,8 +1,0 @@
-image: gitpod/workspace-node-lts:2022-10-08-01-35-13
-
-vscode:
-  extensions:
-    - bradlc.vscode-tailwindcss
-    - esbenp.prettier-vscode
-    - ms-vscode.vscode-typescript-next
-    - arcanis.vscode-zipfs
